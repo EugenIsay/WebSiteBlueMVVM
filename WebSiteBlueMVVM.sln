@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteBlueMVVM", "WebSiteBlueMVVM.csproj", "{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F413F588-967A-4A2B-BF32-7C1C55CAFA1D}
+	EndGlobalSection
+EndGlobal

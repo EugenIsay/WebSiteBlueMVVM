@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500" 
+        x:Class="WebSiteBlueMVVM.Views.RegWindowView"
+		xmlns:vm="using:WebSiteBlueMVVM.ViewModels"
+		x:DataType="vm:RegWindowViewModel"
+		x:CompileBindings="True"
+		Width="400" Height="{Binding WinHight}"
+		WindowStartupLocation="CenterOwner"
+		Background="Transparent"
+		TransparencyLevelHint="AcrylicBlur"
+		CanResize="False"
+		Name="win"
+        Title="RegWindowView">
+
+	<Window.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:RegWindowViewModel/>
+	</Window.DataContext>
+
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:RegWindowViewModel/>
+	</Design.DataContext>
+
+	<StackPanel Name="Login_page" HorizontalAlignment="Center" VerticalAlignment="Center" >
+		<Border BoxShadow="4 5 20 -1 Navy" CornerRadius="10" Background="White" Height="{Binding PanelHight}" Width="300" >
+			<StackPanel>
+			<StackPanel IsVisible="{Binding !Closing}">
+			<StackPanel IsVisible="{Binding !IsLoginOrReg}">
+				<TextBlock HorizontalAlignment="Center" FontSize="20" Foreground="Black" Margin="0, 20, 0, 0" Text="Login"/>
+				<TextBox Margin="50, 5" Text="{Binding Name}" Watermark="Enter your login or email"/>
+				<TextBox Margin="50, 5" Text="{Binding Pass}" Watermark="Enter your password"/>
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+					<Button HorizontalAlignment="Center" Content="Comfirm"/>
+					<Button HorizontalAlignment="Center" Content="I don't have account" Command="{Binding LogOrReg}"/>
+				</StackPanel>
+			</StackPanel>
+				<StackPanel IsVisible="{Binding IsLoginOrReg}">
+					<TextBlock HorizontalAlignment="Center" FontSize="20" Foreground="Black" Margin="0, 20, 0, 0" Text="Login"/>
+					<TextBox Margin="50, 5" Watermark="Enter your login" Text="{Binding Name}"/>
+					<TextBox Margin="50, 5" Watermark="Enter your password" Text="{Binding Pass}"/>
+					<TextBox Margin="50, 5" Watermark="Enter your email" Text="{Binding Email}"/>
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+						<Button HorizontalAlignment="Center" Content="Comfirm" Command="{Binding ButtonSignUp}"/>
+						<Button HorizontalAlignment="Center" Command="{Binding LogOrReg}" Content="I do have an account"/>
+					</StackPanel>
+				</StackPanel>
+				</StackPanel>
+			<StackPanel IsVisible="{Binding Closing}">
+				<TextBlock Text="Thanks for login in!" />
+				<Button Content="Okay" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).ClosrLogin}"/>
+				</StackPanel>
+				</StackPanel>
+		</Border>
+	</StackPanel>
+</Window>

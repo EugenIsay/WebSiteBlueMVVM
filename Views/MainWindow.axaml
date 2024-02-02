@@ -1,0 +1,74 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WebSiteBlueMVVM.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="WebSiteBlueMVVM.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="WebSiteBlueMVVM"
+		>
+
+    <Design.DataContext>																							
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Window.Styles>
+		<Style Selector="Window">
+			<Setter Property="Background">
+				<ImageBrush Source="\Assets\Background_Blur.png" Stretch="Fill"/>
+			</Setter>
+		</Style>
+		<Style Selector="Button.H1">
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="Height" Value="25"/>
+			<Setter Property="Margin" Value="0,7,7,0"/>
+			<Setter Property="FontSize" Value="10"/>
+			<Setter Property="IsEnabled" Value="{Binding MenuEnable}"/>
+		</Style>
+		<Style Selector="TextBlock.H1">
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontFamily" Value="Verdana"/>
+			<Setter Property="FontSize" Value="25"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+		</Style>
+	</Window.Styles>
+	<Grid Margin="70" HorizontalAlignment="Stretch" MinWidth="400" MinHeight="250"  MaxWidth="800" MaxHeight="450">
+		<Border CornerRadius="0" Opacity="1" BoxShadow="4 5 20 -1 Navy">
+			<Image Stretch="UniformToFill" Source="/Assets/Ocean_Background.jpg"/>
+		</Border>
+		<Grid>
+			<Grid Margin="10" VerticalAlignment="Top" Height="10">
+				<StackPanel HorizontalAlignment="Left">
+					<Image Height="40" Width="40" Source="/Assets/circle-logo.png"/>
+					<TextBlock FontFamily="Times New Roman" Text="BlueWebSite"/>
+				</StackPanel>
+				<StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+					<Button Content="Home" Classes="H1"/>
+					<Button Content="Products" Classes="H1"/>
+					<Button Content="About" Classes="H1"/>
+					<Button Content="Contacts" Classes="H1"/>
+					<Button Content="W" Classes="H1" Width="30">
+						<Image Source="/Assets/StripesMenu.png"/>
+					</Button>
+				</StackPanel>
+
+			</Grid>
+			<StackPanel IsVisible="True" Name="Welcome_page" HorizontalAlignment="Center" VerticalAlignment="Center">
+				<StackPanel.Transitions>
+					<Transitions>
+						<DoubleTransition Property="Opacity" Duration="0:0:1"/>
+					</Transitions>
+				</StackPanel.Transitions>
+				<TextBlock Classes="H1" Text="WELCOME TO OUR WEBSITE"/>
+				<TextBlock Classes="H1" FontSize="15" IsVisible="{Binding !MenuEnable}"  Text="You need to Sign Up"/>
+				<Button HorizontalAlignment="Center" Foreground="White" Content="Sign Up" IsVisible="{Binding !MenuEnable}" Margin="10" Background="BlueViolet" Command="{Binding SignUpButton}"/>
+			</StackPanel>
+
+		</Grid>
+	</Grid>
+
+</Window>

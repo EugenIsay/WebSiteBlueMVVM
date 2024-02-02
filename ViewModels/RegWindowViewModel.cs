@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebSiteBlueMVVM;
-using Avalonia;
-using ReactiveUI;
-using Avalonia.Controls;
+﻿using ReactiveUI;
+using WebSiteBlueMVVM.Views;
 
 namespace WebSiteBlueMVVM.ViewModels
 {
@@ -40,7 +32,8 @@ namespace WebSiteBlueMVVM.ViewModels
         public void LogOrReg()
         {
             IsLoginOrReg = !IsLoginOrReg;
-            if (IsLoginOrReg) {
+            if (IsLoginOrReg)
+            {
                 WinHight = 400;
                 PanelHight = 230;
             }
@@ -49,6 +42,9 @@ namespace WebSiteBlueMVVM.ViewModels
                 WinHight = 250;
                 PanelHight = 175;
             }
+            Name = string.Empty;
+            Email = string.Empty;
+            Pass = string.Empty;
         }
         public void ButtonSignIn()
         {
@@ -58,6 +54,7 @@ namespace WebSiteBlueMVVM.ViewModels
         {
             Manager.AddUser(Name, Email, Pass);
             Closing = true;
+            RegWindowView.WindowClosedEvent
 
         }
         public string _name = string.Empty;
@@ -78,5 +75,6 @@ namespace WebSiteBlueMVVM.ViewModels
             get { return _pass; }
             set { this.RaiseAndSetIfChanged(ref _pass, value); }
         }
+
     }
 }

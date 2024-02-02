@@ -1,7 +1,7 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using WebSiteBlueMVVM.ViewModels;
 using System;
+using WebSiteBlueMVVM.ViewModels;
 
 namespace WebSiteBlueMVVM
 {

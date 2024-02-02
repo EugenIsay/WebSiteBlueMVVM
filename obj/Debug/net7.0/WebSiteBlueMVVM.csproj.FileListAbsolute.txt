@@ -1,3 +1,10 @@
+C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.csproj.AssemblyReference.cache
+C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\Resources.Inputs.cache
+C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\resources
+C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.AssemblyInfoInputs.cache
+C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.AssemblyInfo.cs
+C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.csproj.CoreCompileInputs.cache
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\WebSiteBlueMVVM.exe
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\WebSiteBlueMVVM.deps.json
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\WebSiteBlueMVVM.runtimeconfig.json
@@ -116,13 +123,6 @@ C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win-x86\native\libSkiaSharp.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.csproj.AssemblyReference.cache
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\Resources.Inputs.cache
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\resources
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.AssemblyInfoInputs.cache
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.AssemblyInfo.cs
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.csproj.CoreCompileInputs.cache
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\references
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\original.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\original.pdb

@@ -1,32 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Avalonia;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
-using ReactiveUI;
+using System;
 using WebSiteBlueMVVM.Views;
 
 namespace WebSiteBlueMVVM.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        public ViewModelBase[] viewModelBase =
+        {
+            new RegWindowViewModel()
+        };
 
-        RegWindowView dialog = new RegWindowView();
-        public MainWindowViewModel() 
+        public MainWindowViewModel()
         {
 
         }
-        public void SignUpButton()
+        public async void SignUpButton()
         {
-            dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(false);
-
-        }
-        public void ClosrLogin()
-        {
+            RegWindowView dialog = new RegWindowView();
+            //var viewModel = new RegWindowViewModel();
+            //viewModel.RequestClose += window.Close;
+            await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(false);
             dialog.Close();
+        }
+        public void CloseLogin()
+        {
+
         }
         public string Name
         {

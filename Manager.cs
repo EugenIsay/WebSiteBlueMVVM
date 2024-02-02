@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Collections.Generic;
 
 namespace WebSiteBlueMVVM
 {
     public static class Manager
     {
-        static List <User> Users = new List <User> ();
+        static List<User> Users = new List<User>();
         public static void AddUser(string name, string email, string pass)
         {
-            Users.Add(new User { Name = name, Email = email , Password = pass});
+            Users.Add(new User { Name = name, Email = email, Password = pass });
         }
         static string GetName(int index)
         {
@@ -24,7 +19,7 @@ namespace WebSiteBlueMVVM
         }
         static public int GetIndex(string email)
         {
-            if (Users.Contains(new User { Email = email })) 
+            if (Users.Contains(new User { Email = email }))
             {
                 return Users.IndexOf(new User { Email = email });
             }

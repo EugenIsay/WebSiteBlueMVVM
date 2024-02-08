@@ -5,6 +5,8 @@ namespace WebSiteBlueMVVM
     public static class Manager
     {
         static List<User> Users = new List<User>();
+        static private bool _reg = false;
+        static public bool Reg { get { return _reg; }  set { _reg = value; } }
         public static void AddUser(string name, string email, string pass)
         {
             Users.Add(new User { Name = name, Email = email, Password = pass });

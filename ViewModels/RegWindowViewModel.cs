@@ -54,9 +54,9 @@ namespace WebSiteBlueMVVM.ViewModels
         {
             Manager.AddUser(Name, Email, Pass);
             Closing = true;
-            RegWindowView.WindowClosedEvent
-
+            Manager.Reg = true;
         }
+        public bool NotRegistrated = true;
         public string _name = string.Empty;
         public string Name
         {

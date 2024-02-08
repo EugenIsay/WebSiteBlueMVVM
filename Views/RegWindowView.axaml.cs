@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 
 namespace WebSiteBlueMVVM.Views
 {
@@ -8,5 +9,10 @@ namespace WebSiteBlueMVVM.Views
         {
             InitializeComponent();
         }
+        public void WinClose(object sender, RoutedEventArgs args)
+        {
+            Close();
+        }
+        
     }
 }

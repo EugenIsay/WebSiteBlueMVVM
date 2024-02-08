@@ -1,33 +1,38 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
+using ReactiveUI;
 using System;
+using System.Windows.Input;
+using System.Xml.Linq;
 using WebSiteBlueMVVM.Views;
 
 namespace WebSiteBlueMVVM.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public ViewModelBase[] viewModelBase =
+        private ViewModelBase _CurrentPage;
+        bool[] ButtonAccess = new bool[5];
+        public ViewModelBase CurrentPage
         {
-            new RegWindowViewModel()
+            get { return _CurrentPage; }
+            private set { this.RaiseAndSetIfChanged(ref _CurrentPage, value); }
+        }
+        public ViewModelBase[] Pages =
+        {
+            new HomeViewModel(),
+            new ProductsViewModel()
         };
-
         public MainWindowViewModel()
         {
-
+            CurrentPage = Pages[0];
+            ButtonAccess[0] = true;
         }
         public async void SignUpButton()
         {
             RegWindowView dialog = new RegWindowView();
-            //var viewModel = new RegWindowViewModel();
-            //viewModel.RequestClose += window.Close;
-            await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(false);
-            dialog.Close();
-        }
-        public void CloseLogin()
-        {
-
+            await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
+            MenuEnable = Manager.Reg;
         }
         public string Name
         {
@@ -38,26 +43,70 @@ namespace WebSiteBlueMVVM.ViewModels
         {
             get => _email; set => _email = value;
         }
-        private bool _registrated = false;
-        public bool Registrated
+        private bool _ViewVisible = true;
+        public bool ViewVisible
         {
-            get => _registrated;
-            set => _registrated = value;
+            get { return _ViewVisible; }
+            set { this.RaiseAndSetIfChanged(ref _ViewVisible, value); }
         }
-        public bool PersonRegistrated()
-        {
-            if (Manager.GetIndex(Email) == -1)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        private bool _menuEnable = false;
         public bool MenuEnable
         {
-            get => PersonRegistrated();
+            get { return _menuEnable; }
+            set { this.RaiseAndSetIfChanged(ref _menuEnable, value); }
         }
+        public void ButtonMenu()
+        {
+            AllFalse();
+            ButtonMenuAcces = true;
+            CurrentPage = Pages[0];
+        }
+        public bool ButtonMenuAcces
+        {
+            get { return ButtonAccess[0]; }
+            set { this.RaiseAndSetIfChanged(ref ButtonAccess[0], value); }
+        }
+        public void ButtonProducts()
+        {
+            AllFalse();
+            ButtonProductsAccess = true;
+            CurrentPage = Pages[1];
+        }
+        public bool ButtonProductsAccess
+        {
+            get { return ButtonAccess[1]; }
+            set { this.RaiseAndSetIfChanged(ref ButtonAccess[1], value); }
+        }
+        public void ButtonAbout()
+        {
+            AllFalse();
+            ButtonAboutAccess = true;
+            ViewVisible = false;
+        }
+        public bool ButtonAboutAccess
+        {
+            get { return ButtonAccess[2]; }
+            set { this.RaiseAndSetIfChanged(ref ButtonAccess[2], value); }
+        }
+        public void ButtonContacts()
+        {
+            AllFalse();
+            ButtonContactsAccess = true; 
+            ViewVisible = false;
+        }
+        public bool ButtonContactsAccess
+        {
+            get { return ButtonAccess[3]; }
+            set { this.RaiseAndSetIfChanged(ref ButtonAccess[3], value); }
+        }
+        void AllFalse()
+        {
+            ViewVisible = true;
+            ButtonMenuAcces = false;
+            ButtonProductsAccess = false;
+            ButtonAboutAccess = false;
+            ButtonContactsAccess = false;
+        }
+
     }
 }

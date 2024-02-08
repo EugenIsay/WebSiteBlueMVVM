@@ -53,7 +53,7 @@
 				</StackPanel>
 			<StackPanel IsVisible="{Binding Closing}">
 				<TextBlock Text="Thanks for login in!" />
-				<Button Content="Okay" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).CloseLogin}"/>
+				<Button Content="Okay" Click="WinClose"/>
 				</StackPanel>
 				</StackPanel>
 		</Border>

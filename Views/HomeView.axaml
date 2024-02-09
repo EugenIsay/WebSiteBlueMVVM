@@ -7,14 +7,24 @@
 			 xmlns:vm="using:WebSiteBlueMVVM.ViewModels"
 			 Background="White"
 			 x:DataType="vm:HomeViewModel"
+			 MaxWidth="200"
 			 Margin="10">
 	<StackPanel>
-	<TextBlock>
-		Home page
-	</TextBlock>
-	<TextBlock>
-		homepage
-	</TextBlock>
-		</StackPanel>
+	<TextBlock Text="Our Users"/>
+		<Border BorderBrush="BlueViolet" BorderThickness="2">
 
+			<ListBox
+		ItemsSource="{Binding ListBox}"
+		SelectionMode="Single"
+		>
+		<ListBox.ItemTemplate>
+			<DataTemplate>
+				<TextBlock Text="{Binding Name}"/>
+				
+			</DataTemplate>
+		</ListBox.ItemTemplate>
+	</ListBox>
+		</Border>
+
+	</StackPanel>
 </UserControl>

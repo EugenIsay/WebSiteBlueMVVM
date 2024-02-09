@@ -40,11 +40,9 @@ C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\Microsoft.Co
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\ReactiveUI.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\SkiaSharp.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\Splat.dll
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\System.IO.Pipelines.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\System.Reactive.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\Tmds.DBus.Protocol.dll
@@ -112,7 +110,6 @@ C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\osx
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win-arm64\native\libHarfBuzzSharp.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win-x64\native\libHarfBuzzSharp.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win-x86\native\libHarfBuzzSharp.dll
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\linux-arm\native\libSkiaSharp.so
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\linux-arm64\native\libSkiaSharp.so
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\linux-musl-x64\native\libSkiaSharp.so
@@ -121,8 +118,6 @@ C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\osx
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win-arm64\native\libSkiaSharp.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win-x64\native\libSkiaSharp.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win-x86\native\libSkiaSharp.dll
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\references
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\original.dll
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\Avalonia\original.pdb
@@ -133,3 +128,4 @@ C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueM
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.csproj.CopyComplete
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\WebSiteBlueMVVM.genruntimeconfig.cache
 C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\obj\Debug\net7.0\ref\WebSiteBlueMVVM.dll
+C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\bin\Debug\net7.0\Avalonia.Metal.dll

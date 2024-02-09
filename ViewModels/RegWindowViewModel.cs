@@ -53,6 +53,7 @@ namespace WebSiteBlueMVVM.ViewModels
         public void ButtonSignUp()
         {
             Manager.AddUser(Name, Email, Pass);
+            Manager.AddUser("aaa", "aaa", "aaa");
             Closing = true;
             Manager.Reg = true;
         }

@@ -4,7 +4,7 @@ namespace WebSiteBlueMVVM
 {
     public static class Manager
     {
-        static List<User> Users = new List<User>();
+        static public List<User> Users = new List<User>();
         static private bool _reg = false;
         static public bool Reg { get { return _reg; }  set { _reg = value; } }
         public static void AddUser(string name, string email, string pass)

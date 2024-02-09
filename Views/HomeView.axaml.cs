@@ -10,4 +10,8 @@ public partial class HomeView : UserControl
     {
         InitializeComponent();
     }
+
+    private void UserControl_SizeChanged(object? sender, Avalonia.Controls.SizeChangedEventArgs e)
+    {
+    }
 }

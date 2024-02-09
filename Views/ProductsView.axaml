@@ -5,6 +5,5 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WebSiteBlueMVVM.Views.ProductsView"			 
 			 xmlns:vm="using:WebSiteBlueMVVM.ViewModels"
-			 x:DataType="vm:ProductsViewModel">>
-	
+			 x:DataType="vm:ProductsViewModel">
 </UserControl>

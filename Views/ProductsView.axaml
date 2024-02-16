@@ -1,9 +1,43 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WebSiteBlueMVVM.Views.ProductsView"			 
 			 xmlns:vm="using:WebSiteBlueMVVM.ViewModels"
+			 MinWidth="400" MinHeight="150" MaxWidth="800" MaxHeight="450"
 			 x:DataType="vm:ProductsViewModel">
+	<StackPanel>
+	<Border BorderThickness="3" Margin="2" BorderBrush="Black" Height="35" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Background="Azure">
+			<Button Content="Shop"/>
+			<Button Content="Cart"/>
+			<Button HorizontalAlignment="Right" Content="Cart"/>
+		</StackPanel>
+	</Border>
+		<Panel VerticalAlignment="Stretch">
+	<Border Background="White" VerticalAlignment="Stretch" MinWidth="400" MinHeight="150" MaxWidth="800" MaxHeight="450" Margin="10" BorderBrush="BlueViolet" BorderThickness="2" >
+		<StackPanel VerticalAlignment="Center">
+
+		<ListBox IsVisible="{Binding BoxAvalible}"
+	ItemsSource="{Binding ListBox}"
+	SelectionMode="Single"
+		>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Name}"/>
+
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+			<StackPanel  IsVisible="{Binding !BoxAvalible}">
+			<TextBlock HorizontalAlignment="Center" Text="No Products are avalible" />
+				<TextBlock HorizontalAlignment="Center" Text="If you want to add one, click button below" />
+				<Button HorizontalAlignment="Center" Content="Click me!"/>
+				
+			</StackPanel>
+				</StackPanel>
+	</Border>
+		</Panel>
+		</StackPanel>
 </UserControl>

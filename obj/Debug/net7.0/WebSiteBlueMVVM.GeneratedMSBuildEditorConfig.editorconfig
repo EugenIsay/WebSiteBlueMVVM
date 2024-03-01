@@ -18,6 +18,9 @@ build_property.ProjectDir = C:\Users\prdb\Desktop\IsayProjects\WebSiteBlueMVVM\
 [C:/Users/prdb/Desktop/IsayProjects/WebSiteBlueMVVM/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/prdb/Desktop/IsayProjects/WebSiteBlueMVVM/Views/EditingView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/prdb/Desktop/IsayProjects/WebSiteBlueMVVM/Views/HomeView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

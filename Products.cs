@@ -55,5 +55,7 @@ namespace WebSiteBlueMVVM
 
         private int _amount = 1;
         public int Amount { get { return _amount; } set { _amount = value; } }
+        private int _sold = 1;
+        public int Sold { get { return _sold; } set { _sold = value; } }
     }
 }

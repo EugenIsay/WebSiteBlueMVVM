@@ -56,6 +56,7 @@ namespace WebSiteBlueMVVM.ViewModels
             Manager.AddUser("aaa", "aaa", "aaa");
             Closing = true;
             Manager.Reg = true;
+            Manager.GetOrSetCurEmail = Email;
         }
         public bool NotRegistrated = true;
         public string _name = string.Empty;

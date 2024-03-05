@@ -30,6 +30,12 @@ namespace WebSiteBlueMVVM
                 return -1;
             }
         }
+        static private string _CurEmail = string.Empty;
+        public static string GetOrSetCurEmail 
+        {
+            get { return _CurEmail; } 
+            set { _CurEmail = value; }
+        }
     }
     public class User
     {

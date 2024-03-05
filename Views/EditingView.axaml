@@ -16,7 +16,7 @@
 		<TextBox/>
 		<TextBlock Text="Set amount of product you want to sell"/>
 		<TextBox/>
-		<Button Margin="0,10,0,0" Content="Comfirm"/>
+		<Button Background="BlueViolet" Foreground="White" Margin="0,10,0,0" Content="Comfirm"/>
 	</StackPanel>
 	</Border>
 </Window>

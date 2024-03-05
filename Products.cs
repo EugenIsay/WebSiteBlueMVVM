@@ -9,9 +9,9 @@ namespace WebSiteBlueMVVM
     public static class Products
     {
         public static List<Product> products = new List<Product>();
-        public static void Add_Product(int saller, double cost, string name)
+        public static void Add_Product(int saller, double cost, string name, int am)
         {
-            products.Add(new Product() { Saller = saller, Cost = cost, Name = name });
+            products.Add(new Product() { Saller = saller, Cost = cost, Name = name, Amount = am });
         }
         public static int GetUser(int i)
         {

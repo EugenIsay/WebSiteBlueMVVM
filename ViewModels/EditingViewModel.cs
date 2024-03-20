@@ -1,11 +1,14 @@
 ﻿using Avalonia.Controls;
 using ReactiveUI;
+using WebSiteBlueMVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace WebSiteBlueMVVM.ViewModels
 {
@@ -25,7 +28,26 @@ namespace WebSiteBlueMVVM.ViewModels
             {
                 Products.Add_Product( Manager.GetIndex(Manager.GetOrSetCurEmail) ,Price,Name , Amount);
                 //var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this);
+                NotifyPropertyChanged();            
             }
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        public List<Product> ListBox
+        {
+            get => GetList();
+        }
+        public List<Product> GetList()
+        {
+            return Products.products;
         }
 
     }

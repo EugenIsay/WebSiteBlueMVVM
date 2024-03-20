@@ -52,11 +52,14 @@ namespace WebSiteBlueMVVM.ViewModels
         }
         public void ButtonSignUp()
         {
-            Manager.AddUser(Name, Email, Pass);
-            Manager.AddUser("aaa", "aaa", "aaa");
-            Closing = true;
-            Manager.Reg = true;
-            Manager.GetOrSetCurEmail = Email;
+            if (Name != string.Empty && Email!= string.Empty && Pass != string.Empty)
+            {
+                Manager.AddUser(Name, Email, Pass);
+                Manager.AddUser("aaa", "aaa", "aaa");
+                Closing = true;
+                Manager.Reg = true;
+                Manager.GetOrSetCurEmail = Email;
+            }
         }
         public bool NotRegistrated = true;
         public string _name = string.Empty;

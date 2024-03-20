@@ -13,24 +13,22 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebSiteBlueMVVM
-build_property.ProjectDir = C:\Users\Class_Student\Desktop\IsayProj\WebSiteBlueMVVM\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\zheka\Desktop\WebSiteBlueMVVM\
 
-[C:/Users/Class_Student/Desktop/IsayProj/WebSiteBlueMVVM/App.axaml]
+[C:/Users/zheka/Desktop/WebSiteBlueMVVM/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Class_Student/Desktop/IsayProj/WebSiteBlueMVVM/Views/EditingView.axaml]
+[C:/Users/zheka/Desktop/WebSiteBlueMVVM/Views/EditingView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Class_Student/Desktop/IsayProj/WebSiteBlueMVVM/Views/HomeView.axaml]
+[C:/Users/zheka/Desktop/WebSiteBlueMVVM/Views/HomeView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Class_Student/Desktop/IsayProj/WebSiteBlueMVVM/Views/MainWindow.axaml]
+[C:/Users/zheka/Desktop/WebSiteBlueMVVM/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Class_Student/Desktop/IsayProj/WebSiteBlueMVVM/Views/ProductsView.axaml]
+[C:/Users/zheka/Desktop/WebSiteBlueMVVM/Views/ProductsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Class_Student/Desktop/IsayProj/WebSiteBlueMVVM/Views/RegWindowView.axaml]
+[C:/Users/zheka/Desktop/WebSiteBlueMVVM/Views/RegWindowView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

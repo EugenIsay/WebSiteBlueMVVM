@@ -15,7 +15,7 @@
 	<TextBlock Text="Our Users"/>
 		<Border BorderBrush="BlueViolet" BorderThickness="2">
 
-			<ListBox
+		<ListBox
 		ItemsSource="{Binding ListBox}"
 		SelectionMode="Single"
 		>

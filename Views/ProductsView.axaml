@@ -24,21 +24,29 @@
 		<StackPanel Orientation="Horizontal"  DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,10,0" >
 				<Button IsVisible="{Binding ShopOrProd}" HorizontalAlignment="Center" Content="Add to cart"/>
 				<Button IsVisible="{Binding !ShopOrProd}" HorizontalAlignment="Center" Command="{Binding AddProd}" Content="Add new product"/>
+				<Button IsVisible="{Binding !ShopOrProd}" HorizontalAlignment="Center" Command="{Binding DelProd}" Content="Delete"/>
 		</StackPanel>
 		<Border DockPanel.Dock="Top" Background="White"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" BorderBrush="BlueViolet" BorderThickness="2" >
 			<Grid>
-				<DockPanel HorizontalAlignment="Center" IsVisible="{Binding !ShopOrProd}">
-					<TextBlock Text="Your goods"/>
-					<ListBox DockPanel.Dock="Top" IsVisible="{Binding BoxAvalible}"
-						ItemsSource="{Binding ListBox}"
-						SelectionMode="Single">
+				<DockPanel IsVisible="{Binding !ShopOrProd}" LastChildFill="True">
+					<StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" >
+						<TextBlock  Text="Your goods"/>
+					</StackPanel>
+					<ListBox 
+						SelectedIndex="{Binding SelectedIndex}" DockPanel.Dock="Top" IsVisible="{Binding BoxAvalible}"
+							 ItemsSource="{Binding ListBox}"
+							 SelectionMode="Single">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
+								<StackPanel Orientation="Horizontal">
 								<TextBlock Text="{Binding Name}"/>
+									<TextBlock Text="{Binding Cost}"/>
+									</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>
 				</DockPanel>
+
 				<DockPanel IsVisible="{Binding ShopOrProd}" LastChildFill="True">
 					<StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" IsVisible="{Binding !BoxAvalible}">
 						<TextBlock HorizontalAlignment="Center" Text="No Products are avalible for selling" />

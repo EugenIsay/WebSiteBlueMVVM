@@ -1,13 +1,18 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+using Avalonia.Interactivity;
 
-namespace WebSiteBlueMVVM.Views;
-
-public partial class EditingView : Window
+namespace WebSiteBlueMVVM.Views
 {
-    public EditingView()
+    public partial class EditingView : Window
     {
-        InitializeComponent();
+        public EditingView()
+        {
+            InitializeComponent();
+        }
+        public void WinClose(object sender, RoutedEventArgs args)
+        {
+            Close();
+        }
     }
 }
+

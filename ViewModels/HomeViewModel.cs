@@ -11,9 +11,9 @@ namespace WebSiteBlueMVVM.ViewModels
     {
         public List<User> ListBox
         {
-            get => GerList();
+            get => GetList();
         }
-        public List<User> GerList()
+        public List<User> GetList()
         {
             return Manager.Users;
         }

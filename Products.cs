@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using ReactiveUI;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Tmds.DBus.SourceGenerator;
+using System.Reflection;
 
 namespace WebSiteBlueMVVM
 {
@@ -40,22 +45,37 @@ namespace WebSiteBlueMVVM
                 return true;
             }
         }
+        public static void Delete(int i)
+        {
+            products.RemoveAt(i);
+        }
     }
-    public class Product
+    public class Product : INotifyPropertyChanged
     {
         private int _saller;
         public int Saller
-        { get { return _saller; } set { _saller = value; } }
+        { 
+
+            get { return _saller; } 
+            set { _saller = value; } 
+        }
 
         private double _cost = 00.00;
         public double Cost { get { return _cost; } set { _cost = value; } }
 
         private string _name = string.Empty;
-        public string Name { get { return _name; } set { _name = value; } }
+        public string Name { get { return _name; } set { _name = value; OnPropertyChanged(); } }
 
         private int _amount = 1;
         public int Amount { get { return _amount; } set { _amount = value; } }
         private int _sold = 1;
         public int Sold { get { return _sold; } set { _sold = value; } }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
     }
 }

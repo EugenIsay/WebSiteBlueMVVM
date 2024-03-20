@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Class_Student\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj": {}
+    "C:\\Users\\zheka\\Desktop\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Class_Student\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj": {
+    "C:\\Users\\zheka\\Desktop\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Class_Student\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj",
+        "projectUniqueName": "C:\\Users\\zheka\\Desktop\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj",
         "projectName": "WebSiteBlueMVVM",
-        "projectPath": "C:\\Users\\Class_Student\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj",
-        "packagesPath": "C:\\Users\\Class_Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Class_Student\\Desktop\\IsayProj\\WebSiteBlueMVVM\\obj\\",
+        "projectPath": "C:\\Users\\zheka\\Desktop\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj",
+        "packagesPath": "C:\\Users\\zheka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zheka\\Desktop\\WebSiteBlueMVVM\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Class_Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zheka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +38,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -48,6 +47,10 @@
             "Avalonia": {
               "target": "Package",
               "version": "[11.0.9, )"
+            },
+            "Avalonia.AvaloniaEdit": {
+              "target": "Package",
+              "version": "[11.0.6, )"
             },
             "Avalonia.Desktop": {
               "target": "Package",
@@ -86,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

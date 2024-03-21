@@ -107,8 +107,19 @@ namespace WebSiteBlueMVVM
         }
         public async void PlusBut()
         {
-            Products.products[PlusButton].Watchd++;
+            Watchd++;
         }
+        int _minusButton;
+        public int MinusButton
+        {
+            get { return _minusButton; }
+            set { _minusButton = value; }
+        }
+        public async void MinusBut()
+        {
+            Watchd--;
+        }
+
 
     }
 

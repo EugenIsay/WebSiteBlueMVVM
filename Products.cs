@@ -8,12 +8,15 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Tmds.DBus.SourceGenerator;
 using System.Reflection;
+using DynamicData;
 
 namespace WebSiteBlueMVVM
 {
     public static class Products
     {
         public static List<Product> products = new List<Product>();
+
+        public static List<BuyingProduct> Bproducts = new List<BuyingProduct>();
         public static void Add_Product(int saller, double cost, string name, int am)
         {
             products.Add(new Product() { Saller = saller, Cost = cost, Name = name, Amount = am });
@@ -48,6 +51,7 @@ namespace WebSiteBlueMVVM
         public static void Delete(int i)
         {
             products.RemoveAt(i);
+            Bproducts.Remove(Bproducts.FindAll(f => f.ProductID == i));
         }
     }
     public class Product : INotifyPropertyChanged
@@ -68,7 +72,7 @@ namespace WebSiteBlueMVVM
 
         private int _amount = 1;
         public int Amount { get { return _amount; } set { _amount = value; } }
-        private int _sold = 1;
+        private int _sold = 0;
         public int Sold { get { return _sold; } set { _sold = value; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -76,6 +80,61 @@ namespace WebSiteBlueMVVM
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+        private int _watchd = 0;
+        public int Watchd
+        {
+            get { return _watchd; }
+            set {
+                if (value > Amount)
+                {
+                    _watchd = Amount;
+                }
+                else if(value < 0)
+                {
+                    _watchd = 0;
+                }
+                else
+                {
+                    _watchd = value;
+                }
+            }
+        }
+        int _plusButton;
+        public int PlusButton
+        {
+            get { return _plusButton; }
+            set { _plusButton = value; }
+        }
+        public async void PlusBut()
+        {
+            Products.products[PlusButton].Watchd++;
+        }
 
+    }
+
+    public class BuyingProduct
+    {
+        private int _productid;
+        public int ProductID
+        {
+            get { return _productid; }
+            set { _productid = value; }
+        }
+        public Product Product
+        {
+            get { return Products.products[ProductID]; }
+        }
+        private int _buyer;
+        public int Buyer
+        {
+            get { return _buyer; }
+            set { _buyer = value; }
+        }
+        private bool _purchased = false;
+        public bool Purchased
+        {
+            get { return _purchased; }
+            set { _purchased = value; }
+        }
     }
 }

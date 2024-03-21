@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using System.Linq;
 using WebSiteBlueMVVM.Views;
 
 namespace WebSiteBlueMVVM.ViewModels
@@ -52,10 +53,9 @@ namespace WebSiteBlueMVVM.ViewModels
         }
         public void ButtonSignUp()
         {
-            if (Name != string.Empty && Email!= string.Empty && Pass != string.Empty)
+            if (Name != string.Empty && Email!= string.Empty && Pass != string.Empty && !Manager.Users.Contains(new User { Email = Email }))
             {
                 Manager.AddUser(Name, Email, Pass);
-                Manager.AddUser("aaa", "aaa", "aaa");
                 Closing = true;
                 Manager.Reg = true;
                 Manager.GetOrSetCurEmail = Email;

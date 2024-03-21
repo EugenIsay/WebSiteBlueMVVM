@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="WebSiteBlueMVVM.Views.CartView"
+		     xmlns:vm="using:WebSiteBlueMVVM.ViewModels"
+		     x:DataType="vm:CartViewModel"
+		     x:CompileBindings="True">
+	<UserControl.Styles>
+		<Style Selector="Button">
+			<Setter Property="Background" Value="BlueViolet"/>
+			<Setter Property="Foreground" Value="White"/>
+		</Style>
+	</UserControl.Styles>
+	<DockPanel VerticalAlignment="Stretch">
+		<Border DockPanel.Dock="Top" BorderThickness="3" BorderBrush="Transparent" CornerRadius="5" Background="White" Height="35"  >
+			<Grid >
+
+			</Grid>
+		</Border>
+		<StackPanel Orientation="Horizontal"  DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,10,0" >
+			<Button  HorizontalAlignment="Center" Content="Buy"/>
+			<Button  HorizontalAlignment="Center"  Content="Delete from list"/>
+		</StackPanel>
+		<Border DockPanel.Dock="Top" Background="White"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" BorderBrush="BlueViolet" BorderThickness="2" >
+			<Grid>
+				<DockPanel  LastChildFill="True">
+					<StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" >
+					</StackPanel>
+					<ListBox DockPanel.Dock="Top"
+							 ItemsSource="{Binding ListBox}"
+							 >
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding Product.Name}"/>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</DockPanel>
+			</Grid>
+		</Border>
+	</DockPanel>
+</UserControl>

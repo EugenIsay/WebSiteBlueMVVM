@@ -26,9 +26,23 @@ namespace WebSiteBlueMVVM.ViewModels
             await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
             OnPropertyChanged(nameof(ListBox));
         }
+
+        public async void AddProdToBuyList()
+        {
+            if (SelectedItems != null && SelectedItems.Count != 0)
+            {
+                foreach (Product p in SelectedItems)
+                {
+                    if (!Products.Bproducts.Contains(Products.Bproducts.Find(po => po.Buyer == Manager.GetIndex(Manager.GetOrSetCurEmail) && po.ProductID == Products.products.IndexOf(p) && po.Purchased == false)))
+                    {
+                        Products.Bproducts.Add(new BuyingProduct { ProductID = Products.products.IndexOf(p), Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
+                    }
+                }
+            }
+        }
         public async void DelProd()
         {
-            if (Products.IsEmpty())
+            if (Products.IsEmpty() && SelectedIndex >= 0)
             {
                 Products.Delete(SelectedIndex);
             }
@@ -59,6 +73,26 @@ namespace WebSiteBlueMVVM.ViewModels
             get { return _selectedIndex; }
             set { this.RaiseAndSetIfChanged(ref _selectedIndex, value); }
         }
+
+        int _plusButton;
+        public int PlusButton
+        {
+            get { return _plusButton; }
+            set { this.RaiseAndSetIfChanged(ref _plusButton, value); }
+        }
+        public async void PlusBut()
+        {
+            Products.products[PlusButton].Watchd++;
+        }
+
+
+        List<Product> _selectedItems = new List<Product>();
+        public List<Product> SelectedItems
+        {
+            get { return _selectedItems; }
+            set { this.RaiseAndSetIfChanged(ref _selectedItems, value); }
+        }
+
         public void ChangeButtonToShop()
         {
             ShopOrProd = true;

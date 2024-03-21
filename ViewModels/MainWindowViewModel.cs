@@ -21,7 +21,8 @@ namespace WebSiteBlueMVVM.ViewModels
         public ViewModelBase[] Pages =
         {
             new HomeViewModel(),
-            new ProductsViewModel()
+            new ProductsViewModel(),
+            new CartViewModel()
         };
         public MainWindowViewModel()
         {
@@ -81,7 +82,7 @@ namespace WebSiteBlueMVVM.ViewModels
         {
             AllFalse();
             ButtonAboutAccess = true;
-            ViewVisible = false;
+            CurrentPage = Pages[2];
         }
         public bool ButtonAboutAccess
         {

@@ -22,7 +22,7 @@
 			</Grid>
 		</Border>
 		<StackPanel Orientation="Horizontal"  DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,10,0" >
-				<Button IsVisible="{Binding ShopOrProd}" HorizontalAlignment="Center" Content="Add to cart"/>
+				<Button IsVisible="{Binding ShopOrProd}" HorizontalAlignment="Center" Content="Add to cart" Command="{Binding AddProdToBuyList}"/>
 				<Button IsVisible="{Binding !ShopOrProd}" HorizontalAlignment="Center" Command="{Binding AddProd}" Content="Add new product"/>
 				<Button IsVisible="{Binding !ShopOrProd}" HorizontalAlignment="Center" Command="{Binding DelProd}" Content="Delete"/>
 		</StackPanel>
@@ -35,12 +35,17 @@
 					<ListBox 
 						SelectedIndex="{Binding SelectedIndex}" DockPanel.Dock="Top" IsVisible="{Binding BoxAvalible}"
 							 ItemsSource="{Binding ListBox}"
-							 SelectionMode="Single">
+						SelectionMode="Toggle"
+							SelectedItems="{Binding SelectedItems}">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<StackPanel Orientation="Horizontal">
+									<TextBlock Text=" Name:"/>
 								<TextBlock Text="{Binding Name}"/>
+									<TextBlock Text=" Cost:"/>
 									<TextBlock Text="{Binding Cost}"/>
+									<TextBlock Text=" Amount:"/>
+									<TextBlock Text="{Binding Amount}"/>
 									</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
@@ -53,10 +58,22 @@
 					</StackPanel>
 					<ListBox DockPanel.Dock="Top" IsVisible="{Binding BoxAvalible}"
 							 ItemsSource="{Binding ListBox}"
-							 SelectionMode="Single">
+							 SelectedItems="{Binding SelectedItems}"
+							 >
 						<ListBox.ItemTemplate>
 							<DataTemplate>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Text=" Name:"/>
 								<TextBlock Text="{Binding Name}"/>
+									<TextBlock Text=" Cost:"/>
+								<TextBlock Text="{Binding Cost}"/>
+									<TextBlock Text=" Amount:"/>
+								<TextBlock Text="{Binding Amount}"/>
+								<TextBlock Text=" How much do you want? "/>
+								<Button Content="+" Tag="{Binding PlusButton}" Command="{Binding PlusBut}"/>
+									<TextBlock Text="{Binding Amount}"/>
+								<Button Content="-"/>
+								</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>

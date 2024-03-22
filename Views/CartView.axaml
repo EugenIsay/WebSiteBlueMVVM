@@ -21,14 +21,16 @@
 		</Border>
 		<StackPanel Orientation="Horizontal"  DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,10,0" >
 			<Button  HorizontalAlignment="Center" Content="Buy"/>
-			<Button  HorizontalAlignment="Center"  Content="Delete from list"/>
+			<Button  HorizontalAlignment="Center"  Content="Delete from list" Command="{Binding Delete}"/>
 		</StackPanel>
 		<Border DockPanel.Dock="Top" Background="White"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" BorderBrush="BlueViolet" BorderThickness="2" >
 			<Grid>
 				<DockPanel  LastChildFill="True">
 					<StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" >
 					</StackPanel>
-					<ListBox DockPanel.Dock="Top"
+					<ListBox
+							 SelectedItems="{Binding SelectedItems}"
+							 DockPanel.Dock="Top"
 							 ItemsSource="{Binding ListBox}"
 							 >
 						<ListBox.ItemTemplate>

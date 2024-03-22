@@ -71,7 +71,7 @@
 								<TextBlock Text="{Binding Amount}"/>
 								<TextBlock Text=" How much do you want? "/>
 								<Button Content="+" Tag="{Binding PlusButton}" Command="{Binding PlusBut}"/>
-									<TextBlock Text="{Binding Watchd}"/>
+									<TextBox Text="{Binding Watchd}"/>
 								<Button Content="-" Tag="{Binding MinusBut}" Command="{Binding MinusBut}"/>
 								</StackPanel>
 							</DataTemplate>

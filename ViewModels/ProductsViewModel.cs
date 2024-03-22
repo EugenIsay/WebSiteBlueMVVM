@@ -14,10 +14,11 @@ namespace WebSiteBlueMVVM.ViewModels
 {
     public class ProductsViewModel : ViewModelBase
     {
-        new public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
         public async void AddProd() 
@@ -25,6 +26,7 @@ namespace WebSiteBlueMVVM.ViewModels
             EditingView dialog = new EditingView();
             await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
             OnPropertyChanged(nameof(ListBox));
+            ListBox = null;
         }
 
         public async void AddProdToBuyList()
@@ -51,6 +53,7 @@ namespace WebSiteBlueMVVM.ViewModels
         public List<Product> ListBox
         {
             get { return Products.products; }
+            set { OnPropertyChanged(nameof(ListBox)); }
         }
         public List<Product> GetList()
         {

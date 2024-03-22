@@ -80,7 +80,7 @@ namespace WebSiteBlueMVVM
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
-        private int _watchd = 0;
+        private int _watchd = 1;
         public int Watchd
         {
             get { return _watchd; }
@@ -89,14 +89,15 @@ namespace WebSiteBlueMVVM
                 {
                     _watchd = Amount;
                 }
-                else if(value < 0)
+                else if(value <= 0)
                 {
-                    _watchd = 0;
+                    _watchd = 1;
                 }
                 else
                 {
                     _watchd = value;
                 }
+                OnPropertyChanged(nameof(Watchd));
             }
         }
         int _plusButton;

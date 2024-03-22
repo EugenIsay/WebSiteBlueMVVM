@@ -9,9 +9,23 @@ namespace WebSiteBlueMVVM.ViewModels
     {
         public List<BuyingProduct> ListBox
         {
-            get {
+            get
+            {
                 return Products.Bproducts.Where(p => p.Buyer == Manager.GetIndex(Manager.GetOrSetCurEmail)).ToList();
             }
+        }
+        public void Delete()
+        {
+            foreach (BuyingProduct p in SelectedItems)
+            {
+                Products.Bproducts.Remove(p);
+            }
+        }
+        List<BuyingProduct> _selectedItems = new List<BuyingProduct>();
+        public List<BuyingProduct> SelectedItems
+        {
+            get { return _selectedItems; }
+            set { this.RaiseAndSetIfChanged(ref _selectedItems, value); }
         }
     }
 }

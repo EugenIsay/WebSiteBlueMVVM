@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\profi\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj": {}
+    "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\profi\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj": {
+    "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\profi\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj",
+        "projectUniqueName": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj",
         "projectName": "WebSiteBlueMVVM",
-        "projectPath": "C:\\Users\\profi\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj",
-        "packagesPath": "C:\\Users\\profi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\profi\\Desktop\\IsayProj\\WebSiteBlueMVVM\\obj\\",
+        "projectPath": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\WebSiteBlueMVVM.csproj",
+        "packagesPath": "C:\\Users\\prdb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\profi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\prdb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

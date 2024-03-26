@@ -20,13 +20,18 @@ namespace WebSiteBlueMVVM.ViewModels
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
+        private List<Product> _product;
+        public List<Product> Product 
+        {
+            get { return _product; }
+            set { this.RaiseAndSetIfChanged(ref _product, value); }
+        }
 
         public async void AddProd() 
         {
             EditingView dialog = new EditingView();
             await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
-            OnPropertyChanged(nameof(ListBox));
-            ListBox = null;
+            Product = Products.GetListP;
         }
 
         public async void AddProdToBuyList()
@@ -35,9 +40,9 @@ namespace WebSiteBlueMVVM.ViewModels
             {
                 foreach (Product p in SelectedItems)
                 {
-                    if (!Products.Bproducts.Contains(Products.Bproducts.Find(po => po.Buyer == Manager.GetIndex(Manager.GetOrSetCurEmail) && po.ProductID == Products.products.IndexOf(p) && po.Purchased == false)))
+                    if (!Products.Bproducts.Contains(Products.Bproducts.Find(po => po.Buyer == Manager.GetIndex(Manager.GetOrSetCurEmail) && po.ProductID == Products.GetListP.IndexOf(p) && po.Purchased == false)))
                     {
-                        Products.Bproducts.Add(new BuyingProduct { ProductID = Products.products.IndexOf(p), Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
+                        Products.Bproducts.Add(new BuyingProduct { ProductID = Products.GetListP.IndexOf(p), Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
                     }
                 }
             }
@@ -47,17 +52,13 @@ namespace WebSiteBlueMVVM.ViewModels
             if (Products.IsEmpty() && SelectedIndex >= 0)
             {
                 Products.Delete(SelectedIndex);
+                Product = Products.GetListP;
             }
         }
 
         public List<Product> ListBox
         {
-            get { return Products.products; }
-            set { OnPropertyChanged(nameof(ListBox)); }
-        }
-        public List<Product> GetList()
-        {
-            return Products.products;
+            get { return Products.GetListP; }
         }
         public bool BoxAvalible
         {
@@ -82,10 +83,6 @@ namespace WebSiteBlueMVVM.ViewModels
         {
             get { return _plusButton; }
             set { this.RaiseAndSetIfChanged(ref _plusButton, value); }
-        }
-        public async void PlusBut()
-        {
-            Products.products[PlusButton].Watchd++;
         }
 
 

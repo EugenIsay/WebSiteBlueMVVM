@@ -14,9 +14,15 @@ namespace WebSiteBlueMVVM
 {
     public static class Products
     {
-        public static List<Product> products = new List<Product>();
+        private static List<Product> products = new List<Product>();
 
         public static List<BuyingProduct> Bproducts = new List<BuyingProduct>();
+
+
+        public static List<Product> GetListP
+        {
+            get { return products; }
+        }
         public static void Add_Product(int saller, double cost, string name, int am)
         {
             products.Add(new Product() { Saller = saller, Cost = cost, Name = name, Amount = am });
@@ -68,7 +74,8 @@ namespace WebSiteBlueMVVM
         public double Cost { get { return _cost; } set { _cost = value; } }
 
         private string _name = string.Empty;
-        public string Name { get { return _name; } set { _name = value; OnPropertyChanged(); } }
+        public string Name { get { return _name; } set { _name = value;
+                OnPropertyChanged(nameof(Name)); ; } }
 
         private int _amount = 1;
         public int Amount { get { return _amount; } set { _amount = value; } }
@@ -134,7 +141,7 @@ namespace WebSiteBlueMVVM
         }
         public Product Product
         {
-            get { return Products.products[ProductID]; }
+            get { return Products.GetListP[ProductID]; }
         }
         private int _buyer;
         public int Buyer

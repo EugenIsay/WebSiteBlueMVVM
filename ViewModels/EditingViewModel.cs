@@ -43,11 +43,7 @@ namespace WebSiteBlueMVVM.ViewModels
         }
         public List<Product> ListBox
         {
-            get => GetList();
-        }
-        public List<Product> GetList()
-        {
-            return Products.products;
+            get => Products.GetListP;
         }
 
     }

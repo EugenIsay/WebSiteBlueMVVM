@@ -34,7 +34,7 @@
 					</StackPanel>
 					<ListBox 
 						SelectedIndex="{Binding SelectedIndex}" DockPanel.Dock="Top" IsVisible="{Binding BoxAvalible}"
-							 ItemsSource="{Binding Product}"
+							 ItemsSource="{Binding ListProduct}"
 						SelectionMode="Toggle"
 							SelectedItems="{Binding SelectedItems}">
 						<ListBox.ItemTemplate>
@@ -57,7 +57,7 @@
 						<TextBlock HorizontalAlignment="Center" Text="No Products are avalible for selling" />
 					</StackPanel>
 					<ListBox DockPanel.Dock="Top" IsVisible="{Binding BoxAvalible}"
-							 ItemsSource="{Binding Product}"
+							 ItemsSource="{Binding ListProduct}"
 							 SelectedItems="{Binding SelectedItems}"
 							 >
 						<ListBox.ItemTemplate>

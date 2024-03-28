@@ -3,8 +3,10 @@ using Avalonia.Controls.ApplicationLifetimes;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,24 +16,30 @@ namespace WebSiteBlueMVVM.ViewModels
 {
     public class ProductsViewModel : ViewModelBase
     {
+        public event ListChangedEventDelegate ListChanged;
+        public delegate void ListChangedEventDelegate();
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-        private List<Product> _product;
-        public List<Product> Product 
+
+        private ObservableCollection<Product> _listProduct = new ObservableCollection<Product>(Products.GetListP);
+        public ObservableCollection<Product> ListProduct
         {
-            get { return _product; }
-            set { this.RaiseAndSetIfChanged(ref _product, value); }
+            get { return _listProduct; }
+            set { this.RaiseAndSetIfChanged(ref _listProduct, value); }
         }
 
         public async void AddProd() 
         {
             EditingView dialog = new EditingView();
             await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
-            Product = Products.GetListP;
+            ListProduct = new ObservableCollection<Product>(Products.GetListP);
+            //ListProduct.ForEach(x => Products.GetListP.Add(x));
+            //ListProduct = Products.GetListP.ToObservable<Product>(Products.GetListP);
+            //ListChanged();
         }
 
         public async void AddProdToBuyList()
@@ -43,6 +51,7 @@ namespace WebSiteBlueMVVM.ViewModels
                     if (!Products.Bproducts.Contains(Products.Bproducts.Find(po => po.Buyer == Manager.GetIndex(Manager.GetOrSetCurEmail) && po.ProductID == Products.GetListP.IndexOf(p) && po.Purchased == false)))
                     {
                         Products.Bproducts.Add(new BuyingProduct { ProductID = Products.GetListP.IndexOf(p), Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
+                        //ListProduct = Products.GetListP;
                     }
                 }
             }
@@ -52,7 +61,7 @@ namespace WebSiteBlueMVVM.ViewModels
             if (Products.IsEmpty() && SelectedIndex >= 0)
             {
                 Products.Delete(SelectedIndex);
-                Product = Products.GetListP;
+                //ListProduct = Products.GetListP;
             }
         }
 

@@ -12,11 +12,12 @@ using DynamicData;
 
 namespace WebSiteBlueMVVM
 {
-    public static class Products
+    public static class Products 
     {
         private static List<Product> products = new List<Product>();
 
         public static List<BuyingProduct> Bproducts = new List<BuyingProduct>();
+        public static event EventHandler MyStaticPropertyChanged;
 
 
         public static List<Product> GetListP
@@ -26,6 +27,7 @@ namespace WebSiteBlueMVVM
         public static void Add_Product(int saller, double cost, string name, int am)
         {
             products.Add(new Product() { Saller = saller, Cost = cost, Name = name, Amount = am });
+            MyStaticPropertyChanged?.Invoke(null, EventArgs.Empty);
         }
         public static int GetUser(int i)
         {

@@ -42,10 +42,6 @@ namespace WebSiteBlueMVVM.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-        public ObservableCollection<Product> ListBox
-        {
-            get => Products.GetListP;
-        }
 
     }
 }

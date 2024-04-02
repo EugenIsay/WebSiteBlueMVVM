@@ -31,18 +31,6 @@
 		<TextBlock Text="Set amount of product you want to sell"/>
 		<TextBox Text="{Binding Amount}"/>
 		<Button  Background="BlueViolet" Command="{Binding Comfirm}" Foreground="White" Margin="0,10,0,0" Content="Comfirm"/>
-		<ListBox DockPanel.Dock="Top"
-		ItemsSource="{Binding ListBox}"
-		SelectionMode="Single">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<StackPanel >
-						<TextBlock Text="{Binding Name}"/>
-						<TextBlock Text="{Binding Cost}"/>
-					</StackPanel>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
 	</StackPanel>
 	</Border>
 </Window>

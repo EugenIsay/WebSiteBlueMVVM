@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|c:\\users\\prdb\\desktop\\isayproj\\websitebluemvvm\\views\\editingview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|solutionrelative:views\\editingview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|c:\\users\\prdb\\desktop\\isayproj\\websitebluemvvm\\viewmodels\\editingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|solutionrelative:viewmodels\\editingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|c:\\users\\prdb\\desktop\\isayproj\\websitebluemvvm\\views\\regwindowview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|solutionrelative:views\\regwindowview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|c:\\users\\prdb\\desktop\\isayproj\\websitebluemvvm\\views\\editingview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|solutionrelative:views\\editingview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{14D66D7A-0CCA-4DB3-9549-D4FF1D7776DA}|WebSiteBlueMVVM.csproj|c:\\users\\prdb\\desktop\\isayproj\\websitebluemvvm\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,11 +66,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "RegWindowView.axaml",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\Views\\RegWindowView.axaml",
               "RelativeDocumentMoniker": "Views\\RegWindowView.axaml",
@@ -82,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductsView.axaml",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\Views\\ProductsView.axaml",
               "RelativeDocumentMoniker": "Views\\ProductsView.axaml",
@@ -118,15 +118,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "EditingView.axaml",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\Views\\EditingView.axaml",
               "RelativeDocumentMoniker": "Views\\EditingView.axaml",
               "ToolTip": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\Views\\EditingView.axaml",
               "RelativeToolTip": "Views\\EditingView.axaml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAArwCQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-26T06:09:31.862Z"
+              "WhenOpened": "2024-03-26T06:09:31.862Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -154,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EditingViewModel.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\ViewModels\\EditingViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\EditingViewModel.cs",
@@ -167,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Products.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\Products.cs",
               "RelativeDocumentMoniker": "Products.cs",
@@ -191,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ProductsViewModel.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\ViewModels\\ProductsViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\ProductsViewModel.cs",
@@ -199,8 +200,7 @@
               "RelativeToolTip": "ViewModels\\ProductsViewModel.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAApwCgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T06:05:50.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T06:05:50.622Z"
             },
             {
               "$type": "Document",
@@ -216,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Manager.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\IsayProj\\WebSiteBlueMVVM\\Manager.cs",
               "RelativeDocumentMoniker": "Manager.cs",

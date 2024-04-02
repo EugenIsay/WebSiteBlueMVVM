@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebSiteBlueMVVM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79b493107282709197c1639eda5d85b8a3352834")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1478968e7026bac3d44db4509e3b0a4021f7db0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebSiteBlueMVVM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebSiteBlueMVVM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

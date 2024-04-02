@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using Tmds.DBus.SourceGenerator;
 using System.Reflection;
 using DynamicData;
+using System.Collections.ObjectModel;
 
 namespace WebSiteBlueMVVM
 {
@@ -59,7 +60,7 @@ namespace WebSiteBlueMVVM
         public static void Delete(int i)
         {
             products.RemoveAt(i);
-            Bproducts.Remove(Bproducts.FindAll(f => f.ProductID == i));
+            //Bproducts.Remove(Bproducts.FindAll(f => f.ProductID == i));
         }
     }
     public class Product : INotifyPropertyChanged

@@ -32,14 +32,11 @@ namespace WebSiteBlueMVVM.ViewModels
             set { this.RaiseAndSetIfChanged(ref _listProduct, value); }
         }
 
-        public async void AddProd() 
+        public async void AddProd()
         {
             EditingView dialog = new EditingView();
             await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
             ListProduct = new ObservableCollection<Product>(Products.GetListP);
-            //ListProduct.ForEach(x => Products.GetListP.Add(x));
-            //ListProduct = Products.GetListP.ToObservable<Product>(Products.GetListP);
-            //ListChanged();
         }
 
         public async void AddProdToBuyList()
@@ -51,7 +48,6 @@ namespace WebSiteBlueMVVM.ViewModels
                     if (!Products.Bproducts.Contains(Products.Bproducts.Find(po => po.Buyer == Manager.GetIndex(Manager.GetOrSetCurEmail) && po.ProductID == Products.GetListP.IndexOf(p) && po.Purchased == false)))
                     {
                         Products.Bproducts.Add(new BuyingProduct { ProductID = Products.GetListP.IndexOf(p), Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
-                        //ListProduct = Products.GetListP;
                     }
                 }
             }
@@ -61,18 +57,10 @@ namespace WebSiteBlueMVVM.ViewModels
             if (Products.IsEmpty() && SelectedIndex >= 0)
             {
                 Products.Delete(SelectedIndex);
-                //ListProduct = Products.GetListP;
+                ListProduct = new ObservableCollection<Product>(Products.GetListP);
             }
         }
 
-        public List<Product> ListBox
-        {
-            get { return Products.GetListP; }
-        }
-        public bool BoxAvalible
-        {
-            get { return Products.IsEmpty(); }
-        }
         bool _ShopOrProd = true;
         public bool ShopOrProd
         {

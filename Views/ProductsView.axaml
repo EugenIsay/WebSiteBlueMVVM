@@ -33,7 +33,7 @@
 						<TextBlock  Text="Your goods"/>
 					</StackPanel>
 					<ListBox 
-						SelectedIndex="{Binding SelectedIndex}" DockPanel.Dock="Top" IsVisible="{Binding BoxAvalible}"
+						SelectedIndex="{Binding SelectedIndex}" DockPanel.Dock="Top" 
 							 ItemsSource="{Binding ListProduct}"
 						SelectionMode="Toggle"
 							SelectedItems="{Binding SelectedItems}">
@@ -53,10 +53,7 @@
 				</DockPanel>
 
 				<DockPanel IsVisible="{Binding ShopOrProd}" LastChildFill="True">
-					<StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" IsVisible="{Binding !BoxAvalible}">
-						<TextBlock HorizontalAlignment="Center" Text="No Products are avalible for selling" />
-					</StackPanel>
-					<ListBox DockPanel.Dock="Top" IsVisible="{Binding BoxAvalible}"
+					<ListBox DockPanel.Dock="Top"
 							 ItemsSource="{Binding ListProduct}"
 							 SelectedItems="{Binding SelectedItems}"
 							 >

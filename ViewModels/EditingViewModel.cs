@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel;
 
 namespace WebSiteBlueMVVM.ViewModels
 {
@@ -41,7 +42,7 @@ namespace WebSiteBlueMVVM.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-        public List<Product> ListBox
+        public ObservableCollection<Product> ListBox
         {
             get => Products.GetListP;
         }

@@ -15,13 +15,13 @@ namespace WebSiteBlueMVVM
 {
     public static class Products 
     {
-        private static List<Product> products = new List<Product>();
+        private static ObservableCollection<Product> products = new ObservableCollection<Product>();
 
-        public static List<BuyingProduct> Bproducts = new List<BuyingProduct>();
+        public static ObservableCollection<BuyingProduct> Bproducts = new ObservableCollection<BuyingProduct>();
         public static event EventHandler MyStaticPropertyChanged;
 
 
-        public static List<Product> GetListP
+        public static ObservableCollection<Product> GetListP
         {
             get { return products; }
         }
@@ -60,8 +60,10 @@ namespace WebSiteBlueMVVM
         public static void Delete(int i)
         {
             products.RemoveAt(i);
+
             //Bproducts.Remove(Bproducts.FindAll(f => f.ProductID == i));
         }
+        
     }
     public class Product : INotifyPropertyChanged
     {
@@ -130,8 +132,31 @@ namespace WebSiteBlueMVVM
         {
             Watchd--;
         }
-
-
+        int _delInd;
+        public int DelInd
+        {
+            get { return _delInd; }
+            set { _delInd = value; }
+        }
+        public async void DeleteBut()
+        {
+            Products.Delete(DelInd);
+            Products.Bproducts[Products.Bproducts.IndexOf(Products.Bproducts.FirstOrDefault(po => po.ProductID == DelInd))].Delete(DelInd);
+        }
+        int _cartInd;
+        public int CartInd
+        {
+            get { return _cartInd; }
+            set { _cartInd = value; }
+        }
+        public async void AddToCart()
+        {
+            var existingProduct = Products.Bproducts.Contains(Products.Bproducts.FirstOrDefault(po =>  po.ProductID == CartInd));
+            if (!existingProduct)
+            {
+                Products.Bproducts.Add(new BuyingProduct { ProductID = CartInd, Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
+            }
+        }
     }
 
     public class BuyingProduct
@@ -158,5 +183,20 @@ namespace WebSiteBlueMVVM
             get { return _purchased; }
             set { _purchased = value; }
         }
+        int _delIndex;
+        public int DelIndex
+        {
+            get { return _delIndex; }
+            set { _delIndex = value; }
+        }
+        public async void Delete()
+        {
+            Delete(DelIndex);
+        }
+        public void Delete(int p)
+        {
+            Products.Bproducts.Remove(Products.Bproducts.FirstOrDefault(f => f.ProductID == p));
+        }
+
     }
 }

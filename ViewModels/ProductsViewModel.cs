@@ -28,15 +28,15 @@ namespace WebSiteBlueMVVM.ViewModels
         private ObservableCollection<Product> _listProduct = new ObservableCollection<Product>(Products.GetListP);
         public ObservableCollection<Product> ListProduct
         {
-            get { return _listProduct; }
-            set { this.RaiseAndSetIfChanged(ref _listProduct, value); }
+            get { return Products.GetListP; }
+            //set { this.RaiseAndSetIfChanged(ref _listProduct, value); }
         }
 
         public async void AddProd()
         {
             EditingView dialog = new EditingView();
             await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
-            ListProduct = new ObservableCollection<Product>(Products.GetListP);
+            //ListProduct = new ObservableCollection<Product>(Products.GetListP);
         }
 
         public async void AddProdToBuyList()
@@ -45,7 +45,8 @@ namespace WebSiteBlueMVVM.ViewModels
             {
                 foreach (Product p in SelectedItems)
                 {
-                    if (!Products.Bproducts.Contains(Products.Bproducts.Find(po => po.Buyer == Manager.GetIndex(Manager.GetOrSetCurEmail) && po.ProductID == Products.GetListP.IndexOf(p) && po.Purchased == false)))
+                    var existingProduct = Products.Bproducts.Contains(Products.Bproducts.FirstOrDefault(po => po.Buyer == Manager.GetIndex(Manager.GetOrSetCurEmail) && po.ProductID == Products.GetListP.IndexOf(p) && po.Purchased == false));
+                    if (!existingProduct)
                     {
                         Products.Bproducts.Add(new BuyingProduct { ProductID = Products.GetListP.IndexOf(p), Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
                     }
@@ -57,7 +58,7 @@ namespace WebSiteBlueMVVM.ViewModels
             if (Products.IsEmpty() && SelectedIndex >= 0)
             {
                 Products.Delete(SelectedIndex);
-                ListProduct = new ObservableCollection<Product>(Products.GetListP);
+                //ListProduct = new ObservableCollection<Product>(Products.GetListP);
             }
         }
 

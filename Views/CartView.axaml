@@ -40,6 +40,7 @@
 									<Button Content="+" Tag="{Binding Product.PlusButton}" Command="{Binding Product.PlusBut}"/>
 									<TextBox Text="{Binding Product.Watchd}"/>
 									<Button Content="-" Tag="{Binding Product.MinusBut}" Command="{Binding Product.MinusBut}"/>
+									<Button Content="Del" Tag="{Binding DelIndex}" Command="{Binding Delete}"/>
 								</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>

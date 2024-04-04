@@ -39,13 +39,14 @@
 							SelectedItems="{Binding SelectedItems}">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
-								<StackPanel Orientation="Horizontal">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
 									<TextBlock Text=" Name:"/>
 								<TextBlock Text="{Binding Name}"/>
 									<TextBlock Text=" Cost:"/>
 									<TextBlock Text="{Binding Cost}"/>
 									<TextBlock Text=" Amount:"/>
 									<TextBlock Text="{Binding Amount}"/>
+									<Button Content="Del" Tag="{Binding DelInd}" Command="{Binding DeleteBut}"/>
 									</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
@@ -69,7 +70,9 @@
 								<TextBlock Text=" How much do you want? "/>
 								<Button Content="+" Tag="{Binding PlusButton}" Command="{Binding PlusBut}"/>
 									<TextBox Text="{Binding Watchd}"/>
-								<Button Content="-" Tag="{Binding MinusBut}" Command="{Binding MinusBut}"/>
+								<Button Content="-" Tag="{Binding MinusButton}" Command="{Binding MinusBut}"/>
+									<Button Content="Add To Cart" Tag="{Binding CartInd}" Command="{Binding AddToCart}"/>
+
 								</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>

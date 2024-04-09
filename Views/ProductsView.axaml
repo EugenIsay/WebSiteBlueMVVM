@@ -71,7 +71,7 @@
 								<Button Content="+" Tag="{Binding PlusButton}" Command="{Binding PlusBut}"/>
 									<TextBox Text="{Binding Watchd}"/>
 								<Button Content="-" Tag="{Binding MinusButton}" Command="{Binding MinusBut}"/>
-									<Button Content="Add To Cart" Tag="{Binding CartInd}" Command="{Binding AddToCart}"/>
+									<Button Content="Add To Cart" Tag="{Binding CartInd}" Command="{Binding AddToCart}" />
 
 								</StackPanel>
 							</DataTemplate>

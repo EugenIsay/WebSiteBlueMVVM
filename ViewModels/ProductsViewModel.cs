@@ -16,27 +16,16 @@ namespace WebSiteBlueMVVM.ViewModels
 {
     public class ProductsViewModel : ViewModelBase
     {
-        public event ListChangedEventDelegate ListChanged;
-        public delegate void ListChangedEventDelegate();
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
 
-        private ObservableCollection<Product> _listProduct = new ObservableCollection<Product>(Products.GetListP);
         public ObservableCollection<Product> ListProduct
         {
             get { return Products.GetListP; }
-            //set { this.RaiseAndSetIfChanged(ref _listProduct, value); }
         }
 
         public async void AddProd()
         {
             EditingView dialog = new EditingView();
             await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
-            //ListProduct = new ObservableCollection<Product>(Products.GetListP);
         }
 
         public async void AddProdToBuyList()
@@ -58,7 +47,6 @@ namespace WebSiteBlueMVVM.ViewModels
             if (Products.IsEmpty() && SelectedIndex >= 0)
             {
                 Products.Delete(SelectedIndex);
-                //ListProduct = new ObservableCollection<Product>(Products.GetListP);
             }
         }
 

@@ -10,6 +10,8 @@ using Tmds.DBus.SourceGenerator;
 using System.Reflection;
 using DynamicData;
 using System.Collections.ObjectModel;
+using Avalonia.Controls.ApplicationLifetimes;
+using WebSiteBlueMVVM.Views;
 
 namespace WebSiteBlueMVVM
 {
@@ -140,22 +142,31 @@ namespace WebSiteBlueMVVM
         }
         public async void DeleteBut()
         {
-            Products.Delete(DelInd);
-            Products.Bproducts[Products.Bproducts.IndexOf(Products.Bproducts.FirstOrDefault(po => po.ProductID == DelInd))].Delete(DelInd);
+            Products.Bproducts[Products.Bproducts.IndexOf(Products.Bproducts.FirstOrDefault(po => po.ProductID == FindMyInd))].Delete(FindMyInd);
+            Products.Delete(FindMyInd);
         }
-        int _cartInd;
+        int _cartInd = 0;
         public int CartInd
         {
             get { return _cartInd; }
             set { _cartInd = value; }
         }
+        int FindMyInd
+        {
+            get { return Products.GetListP.IndexOf(Products.GetListP.FirstOrDefault(po => po.Saller == Saller && po.Cost == Cost && po.Name == Name && po.Amount == Amount)); }
+        }
         public async void AddToCart()
         {
-            var existingProduct = Products.Bproducts.Contains(Products.Bproducts.FirstOrDefault(po =>  po.ProductID == CartInd));
+            var existingProduct = Products.Bproducts.Contains(Products.Bproducts.FirstOrDefault(po =>  po.ProductID == FindMyInd));
             if (!existingProduct)
             {
-                Products.Bproducts.Add(new BuyingProduct { ProductID = CartInd, Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
+                Products.Bproducts.Add(new BuyingProduct { ProductID = FindMyInd, Buyer = Manager.GetIndex(Manager.GetOrSetCurEmail) });
             }
+        }
+        public async void Redact()
+        {
+            EditingView dialog = new EditingView();
+            //await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
         }
     }
 

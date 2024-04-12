@@ -48,9 +48,9 @@
 				</StackPanel>
 				<StackPanel Margin="0,10,0,0" VerticalAlignment="Center" IsEnabled="{Binding MenuEnable}" HorizontalAlignment="Right" Orientation="Horizontal">
 					<Button Content="Home" Command="{Binding ButtonMenu}" IsEnabled="{Binding !ButtonMenuAcces}" Classes="H1"/>
-					<Button Content="Products" Command="{Binding ButtonProducts}" IsEnabled="{Binding !ButtonProductsAccess}" Classes="H1"/>
-					<Button Content="Cart" Command="{Binding ButtonAbout}" IsEnabled="{Binding !ButtonAboutAccess}" Classes="H1"/>
-					<Button Content="Contacts" Command="{Binding ButtonContacts}" IsEnabled="{Binding !ButtonContactsAccess}" Classes="H1"/>
+					<Button Content="Продукты" Command="{Binding ButtonProducts}" IsEnabled="{Binding !ButtonProductsAccess}" Classes="H1"/>
+					<Button Content="Корзина" Command="{Binding ButtonAbout}" IsEnabled="{Binding !ButtonAboutAccess}" Classes="H1"/>
+					<Button Content="Контакты" Command="{Binding ButtonContacts}" IsEnabled="{Binding !ButtonContactsAccess}" Classes="H1"/>
 					<Button Content="W" Classes="H1" Width="30">
 						<Image Source="/Assets/StripesMenu.png"/>
 					</Button>
@@ -64,9 +64,9 @@
 			</Grid>
 			</Grid>
 			<StackPanel IsVisible="{Binding !MenuEnable}" Name="Welcome_page" HorizontalAlignment="Center" VerticalAlignment="Center">
-				<TextBlock Classes="H1" Text="WELCOME TO OUR WEBSITE"/>
-				<TextBlock Classes="H1" FontSize="15" IsVisible="{Binding !MenuEnable}"  Text="You need to Sign Up"/>
-				<Button HorizontalAlignment="Center" Foreground="White" Content="Sign Up" IsVisible="{Binding !MenuEnable}" Margin="10" Background="BlueViolet" Command="{Binding SignUpButton}"/>
+				<TextBlock Classes="H1" Text="ДОБРОПОЖАЛОВАТЬ НА НАШ САЙТ"/>
+				<TextBlock Classes="H1" FontSize="15" IsVisible="{Binding !MenuEnable}"  Text="Вам необходимо зарегестрироваться"/>
+				<Button HorizontalAlignment="Center" Foreground="White" Content="Регестрация" IsVisible="{Binding !MenuEnable}" Margin="10" Background="BlueViolet" Command="{Binding SignUpButton}"/>
 			</StackPanel>
 		</Grid>
 	</Grid>

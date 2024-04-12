@@ -12,6 +12,9 @@ using DynamicData;
 using System.Collections.ObjectModel;
 using Avalonia.Controls.ApplicationLifetimes;
 using WebSiteBlueMVVM.Views;
+using WebSiteBlueMVVM.ViewModels;
+using Avalonia.Controls;
+using Avalonia;
 
 namespace WebSiteBlueMVVM
 {
@@ -26,6 +29,7 @@ namespace WebSiteBlueMVVM
         public static ObservableCollection<Product> GetListP
         {
             get { return products; }
+            set { value = products; }
         }
         public static void Add_Product(int saller, double cost, string name, int am)
         {
@@ -78,14 +82,14 @@ namespace WebSiteBlueMVVM
         }
 
         private double _cost = 00.00;
-        public double Cost { get { return _cost; } set { _cost = value; } }
+        public double Cost { get { return _cost; } set { _cost = value; OnPropertyChanged(nameof(Cost)); } }
 
         private string _name = string.Empty;
         public string Name { get { return _name; } set { _name = value;
-                OnPropertyChanged(nameof(Name)); ; } }
+                OnPropertyChanged(nameof(Name)); } }
 
         private int _amount = 1;
-        public int Amount { get { return _amount; } set { _amount = value; } }
+        public int Amount { get { return _amount; } set { _amount = value; OnPropertyChanged(nameof(Amount)); OnPropertyChanged(nameof(Watchd)); ; } }
         private int _sold = 0;
         public int Sold { get { return _sold; } set { _sold = value; } }
 
@@ -142,7 +146,11 @@ namespace WebSiteBlueMVVM
         }
         public async void DeleteBut()
         {
-            Products.Bproducts[Products.Bproducts.IndexOf(Products.Bproducts.FirstOrDefault(po => po.ProductID == FindMyInd))].Delete(FindMyInd);
+            int t = Products.Bproducts.IndexOf(Products.Bproducts.FirstOrDefault(po => po.ProductID == FindMyInd));
+            if (t != -1)
+            {
+                Products.Bproducts[t].Delete(FindMyInd);
+            }
             Products.Delete(FindMyInd);
         }
         int _cartInd = 0;
@@ -165,8 +173,9 @@ namespace WebSiteBlueMVVM
         }
         public async void Redact()
         {
-            EditingView dialog = new EditingView();
-            //await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
+            var dialog = new EditingView();
+            dialog.DataContext = new EditingViewModel(FindMyInd); 
+            await dialog.ShowDialog((Application.Current.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime).MainWindow).ConfigureAwait(true);
         }
     }
 

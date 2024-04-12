@@ -16,21 +16,21 @@
 		<Border DockPanel.Dock="Top" BorderThickness="3" BorderBrush="Transparent" CornerRadius="5" Background="White" Height="35"  >
 			<Grid >
 				<StackPanel Orientation="Horizontal">
-					<Button Content="Shop" Command="{Binding ChangeButtonToShop}"/>
+					<Button Content="Магазин" Command="{Binding ChangeButtonToShop}"/>
 				</StackPanel>
-				<Button HorizontalAlignment="Right" Content="Your goods" Command="{Binding ChangeButtonToProd}"/>
+				<Button HorizontalAlignment="Right" Content="Твои товары" Command="{Binding ChangeButtonToProd}"/>
 			</Grid>
 		</Border>
 		<StackPanel Orientation="Horizontal"  DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,10,0" >
-				<Button IsVisible="{Binding ShopOrProd}" HorizontalAlignment="Center" Content="Add to cart" Command="{Binding AddProdToBuyList}"/>
-				<Button IsVisible="{Binding !ShopOrProd}" HorizontalAlignment="Center" Command="{Binding AddProd}" Content="Add new product"/>
-				<Button IsVisible="{Binding !ShopOrProd}" HorizontalAlignment="Center" Command="{Binding DelProd}" Content="Delete"/>
+				<Button IsVisible="{Binding ShopOrProd}" HorizontalAlignment="Center" Content="Добавить в корзину" Command="{Binding AddProdToBuyList}"/>
+				<Button IsVisible="{Binding !ShopOrProd}" HorizontalAlignment="Center" Command="{Binding AddProd}" Content="Добавить продукт на продажу"/>
+				<Button IsVisible="{Binding !ShopOrProd}" HorizontalAlignment="Center" Command="{Binding DelProd}" Content="Удалить"/>
 		</StackPanel>
 		<Border DockPanel.Dock="Top" Background="White"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" BorderBrush="BlueViolet" BorderThickness="2" >
 			<Grid>
 				<DockPanel IsVisible="{Binding !ShopOrProd}" LastChildFill="True">
 					<StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" >
-						<TextBlock  Text="Your goods"/>
+						<TextBlock  Text="Списах ваших товаров"/>
 					</StackPanel>
 					<ListBox 
 						SelectedIndex="{Binding SelectedIndex}" DockPanel.Dock="Top" 
@@ -40,13 +40,16 @@
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-									<TextBlock Text=" Name:"/>
+									<TextBlock Text=" Название:"/>
 								<TextBlock Text="{Binding Name}"/>
-									<TextBlock Text=" Cost:"/>
+									<TextBlock Text=" Цена:"/>
 									<TextBlock Text="{Binding Cost}"/>
-									<TextBlock Text=" Amount:"/>
+									<TextBlock Text=" Количество:"/>
 									<TextBlock Text="{Binding Amount}"/>
-									<Button Content="Del" Tag="{Binding DelInd}" Command="{Binding DeleteBut}"/>
+									<TextBlock Text=" "/>
+									<Button Content="Удалить" Tag="{Binding DelInd}" Command="{Binding DeleteBut}"/>
+									<TextBlock Text=" "/>
+									<Button Content="Редактировать" Tag="{Binding DelInd}" Command="{Binding Redact}"/>
 									</StackPanel>
 							</DataTemplate>
 						</ListBox.ItemTemplate>
@@ -67,11 +70,11 @@
 								<TextBlock Text="{Binding Cost}"/>
 									<TextBlock Text=" Amount:"/>
 								<TextBlock Text="{Binding Amount}"/>
-								<TextBlock Text=" How much do you want? "/>
+								<TextBlock Text=" Сколько вы хотите? "/>
 								<Button Content="+" Tag="{Binding PlusButton}" Command="{Binding PlusBut}"/>
 									<TextBox Text="{Binding Watchd}"/>
 								<Button Content="-" Tag="{Binding MinusButton}" Command="{Binding MinusBut}"/>
-									<Button Content="Add To Cart" Tag="{Binding CartInd}" Command="{Binding AddToCart}" />
+									<Button Content="Добавить в тележку" Tag="{Binding CartInd}" Command="{Binding AddToCart}" />
 
 								</StackPanel>
 							</DataTemplate>

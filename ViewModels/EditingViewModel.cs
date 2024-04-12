@@ -10,11 +10,25 @@ using static System.Net.Mime.MediaTypeNames;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
+using Avalonia.Interactivity;
 
 namespace WebSiteBlueMVVM.ViewModels
 {
     public class EditingViewModel : ViewModelBase
     {
+        public EditingViewModel()
+        {
+
+        }
+        public EditingViewModel(int i) 
+        {
+            index = i;
+            Name = Products.GetListP[index].Name;
+            Price = Products.GetListP[index].Cost;
+            Amount = Products.GetListP[index].Amount;
+            //
+        }
+        int index = -1;
         string _name = string.Empty;
         public string Name { get { return _name; } set { this.RaiseAndSetIfChanged(ref _name, value); } }
 
@@ -23,13 +37,21 @@ namespace WebSiteBlueMVVM.ViewModels
 
         int _amount = 0;
         public int Amount { get { return _amount; } set { this.RaiseAndSetIfChanged(ref _amount, value); } }
-        public void Comfirm()
+        public void Comfirm(object sender, RoutedEventArgs args)
         {
             if (Name != string.Empty && _price > 0)
             {
-                Products.Add_Product( Manager.GetIndex(Manager.GetOrSetCurEmail) ,Price,Name , Amount);
-                //var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.DataContext == this);
-                NotifyPropertyChanged();            
+                if (index == -1)
+                {
+                    Products.Add_Product(Manager.GetIndex(Manager.GetOrSetCurEmail), Price, Name, Amount);
+                }
+                else if (index >= 0)
+                {
+                    Products.GetListP[index].Name = Name;
+                    Products.GetListP[index].Cost = Price;
+                    Products.GetListP[index].Amount = Amount;
+                }
+          
             }
         }
 
